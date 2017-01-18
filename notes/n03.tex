@@ -1,0 +1,73 @@
+\section{Power Reactor Terminology}
+\begin{labeling}
+    \item [\underline{Coolant}:] Material used to remove heat from core, to
+        heat water, to push a turbine, etc.
+    \item [\underline{Steam or Coolant Loops}:] Number of heat transfer mechanisms.
+        Must be at least 1.
+    \item [\underline{Moderator}:] Material that slows down neutrons. Not all
+        reactors are moderated. Sometimes this is the same as the coolant. Typically
+        low-Z materials.
+    \item [\underline{Neutron Energies}:]
+        \begin{labeling}
+            \item [\underline{Fast}:] At or near fission neutron birth energies $> 1$ MeV
+            \item [\underline{Epithermal}:] Neutrons in the process of slowing down
+                $[10^{-5}, 1)$ MeV.
+            \item [\underline{Thermal}:] Neutrons in thermal equilibrium with the moderator,
+                $< 10^{-5}$ MeV. Maxwellian distribution
+                % FIXME Add image of maxwell distribution for linaer and log.
+        \end{labeling}
+    \item [\underline{Fuel Production}:]
+        \begin{labeling}
+            \item [\underline{Burner}:] If destroies more atomes of fuel at discharge.
+            \item [\underline{Breeder}:] If creates more atoms of fuel at discharge
+        \end{labeling}
+\end{labeling}
+
+% FIXME Add single loop core image
+% FIXME Add two loop core image
+
+\section{Neutron Multiplication}
+Reactors are controlled by how many neutron are in teh core at any given time.
+This is because neutrons cause fission, which releases energy and more neutrons.
+
+\section{Prompt Neutron Multiplication}
+``Prompt'' means that neutrons born in a given generation are destroyed or lost before the
+next generation, i.e. instantly.
+
+Change in \# neutrons = Sources - Losses
+
+Symbolically,
+\[ \frac{dN}{dt} = \nu \Sigma_f\phi - \Sigma_a\phi -DB^2\phi \]
+
+Let's go through this term-by-term.
+
+Note: The book uses $\Phi$ for $\phi$
+
+\section{Difussion Theory Terms}
+\begin{labeling}
+    \item [$N$:] Neutron density [n/cm$^3$]
+    \item [$t$:] Time [sec]
+    \item [$\nu$:] Number of neutrons born per fission, 2 - 5 typically [unitless]
+    \item [$\Sigma_f$:] macroscopic fission cross section, [1/cm]
+    \item [$\phi$:] neutron flux, [n/cm$^2$ s]
+    \item [$\Sigma_a$:] Macroscopic absorption cross-section
+    \item [$D$:] Diffission coefficient, [cm], related to neutron mean free path
+        $\lambda_{\mathrm{tr}}$ by
+        \[ D = \frac{\lambda_{\mathrm{tr}}}{3} = \frac{1}{3\Sigma_{\mathrm{tr}}} = \frac{1}{3\Sigma_s(1 -\frac{2}{3A})} \]
+    \item [$B$:] Buckling [1/cm]
+        \begin{itemize}
+            \item \mathbf{Geometric Buckling} $B_g$ depends on the shape of the core, see table 4-2.
+            \item \mathbf{Material Buckling} $B_m$'s is derived from the criticality constraint
+                such that $B_m^2 = \frac{\nu\Sigma_f - \Sigma_a}{D}$ for critical systems.
+        \end{itemize}
+\end{labeling}
+
+So, $\frac{dN}{dt}$ is the growth rate.
+
+$\nu\Sigma_f\phi$ is the rate of neutron birth.
+
+$\Sigma_a\phi$ is the rate at which neutrons are destroyed.
+
+$DB^2\phi$ is the \textit{Leakage}, or the rate at which neutrons leave the system entirely.
+
+\underline{On the board:}  Units for each term. Ensure that they are the same.
