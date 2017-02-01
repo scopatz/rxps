@@ -1,0 +1,47 @@
+Minor modification to put in terms of $\phi$ everywhere.
+\[ \frac{dN}{dt} = \frac{1}{v}\frac{d\phi}{dt} = \nu\Sigma_f\phi - \Sigma_a\phi - DB^2\phi \]
+where $v$ is the neutron velocity [cm/sec].
+
+Now rearrange to be:
+\[ \frac{1}{v\nu\Sigma_f}\frac{d\phi}{dt} = \left(1 - \frac{\Sigma_a + DB^2}{\nu\Sigma_f}\right)\phi \]
+
+\underline{Call}:
+\[ k = \frac{\nu\Sigma_f}{\Sigma_a + DB^2} \] The \textbf{criticality} or the \textbf{multiplication factor}
+[unitless]. When,
+\begin{labeling}
+    \item [$k = 1$] The system is \textit{critical}, as many neutrolns are born as die each generation.
+                    A reactor at a steady power level has $k=1$.
+    \item [$k < 1$] The system is \textit{sub-critical}, more neutrons are destroyed than are being
+                    created. This is the mode a reactor is in when it is shutting down.
+    \item [$k > 1$] The system is \textit{super-critical}, more neutrons are being born than dying.
+                    Importnat when a reactor is starting up.
+\end{labeling}
+This $k$ is sometimes called \textit{k-effective}, or $k_\mathrm{eff}$ because it takes into consideration the
+physical characteristics of the core via the $DB^2$ leakage term.
+
+Ok, back to the equation.
+\[ \frac{1}{v \nu \Sigma_f} \frac{d\phi}{dt} = \left( 1 - \frac{1}{k}\right)\phi = \frac{k-1}{k}\phi \]
+Where $1/k$ is the eigenvalue of the system. Now call $\rho$ [unitless] the \underline{reactivity}. It
+represents changes in the multiplication factor with respect to a critical system.
+\[ \rho = \frac{k-1}{k} = \frac{\Delta k}{k} \]
+When,
+\begin{labeling}
+    \item [$\rho = 0$] The system is \textit{critical}
+    \item [$\rho < 0$] The system is \textit{sub-critical}
+    \item [$\rho > 0$] The system is \textit{super-critical}
+\end{labeling}
+Thus,
+\[ \frac{1}{v\nu\Sigma_f}\frac{d\phi}{dt} = \rho\phi \]
+\[ \frac{1}{v\nu\Sigma_f}\frac{d\phi}{\phi} = \rho dt \]
+\[ \frac{d\phi}{\phi} = v\nu\Sigma_f \rho dt \]
+\[ \int_{\phi(0)}^{\phi(t)} \frac{d\phi}{\phi} = \int_{0}^{t} v\nu\Sigma_f \rho dt \]
+\[ \ln[\phi(t)] - \ln[\phi(0)] = v\nu\Sigma_f \rho t \]
+\[ \ln\left[\frac{\phi(t)}{\phi(0)}\right] = v\nu\Sigma_f \rho t \]
+\[ \frac{\phi(t)}{\phi(0)} = e^{v\nu\Sigma_f \rho t} \]
+\[ \phi(t) = \phi(0)\cdot e^{v\nu\Sigma_f \rho t} \]  % FIXME Box this
+
+Now we can define the \underline{prompt period} as,
+\[ T = \frac{1}{v\nu\Sigma_f \rho} \]
+and the \underline{mean neutron generation time} as,
+\[ \ell^* = T\rho = \frac{1}{v\nu\Sigma_f} \]
+
