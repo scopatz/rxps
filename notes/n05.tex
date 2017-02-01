@@ -1,0 +1,25 @@
+\section{Delayed Neutrons}
+Most neutrons born in the core are prompt neutrons, about 99\%.
+The rest are \textit{deyaled neutrons} and come after a fission
+fragment beta decays,
+%FIXME insert fission fragment figure here.
+\underline{Call} $\beta$ the fraction [iunitless] of neutrons that are delayed, ie
+that are not prompt.  Typically $\beta$ is chopped up into $I$ groups the each represent
+a different mean generation time for thatgroup. Say $i\in I$, then,
+\[ \beta = \sum_{i=1}^I \beta_i \]
+and by convention, $beta_1$ has the longest generation time and $\beta_I$ has the shortest
+generation time. $I=6$ is pretty standard.
+
+Thus the shource of prompt neutrons, rather than being $\nu\Sigma_f\phi$ is now,
+\[ \mathrm{propmpt source} = (1 - \beta) \nu \Sigma_f \phi \]
+Call $C_i(t)$ the \underline{concentration} [1/cm$^3$] of gthe ith group and
+$\lambda_i = \ln(2) / T_{1/2, i}$i sthe \underline{decay constant} [1/s] of the
+ith group. for the half-life [s] of the ith group. The total delayed source is then
+\[ \mathrm{delayed source} = \sum_{i=1}^I \lambda_i C_i(t)\]
+Given that $\beta_i\nu\Sigma_f\phi$
+is the number of ith group neutrons that are born each generation, the concentration ith group
+delayed neutrons at any time is,
+\[ \frac{dC_i(t)}{dt} = \beta_i\nu\Sigma_f\phi(t) - \lambda_i C_i(t)\]
+Recasting the prompt equation as,
+\[ \frac{1}{v} \frac{d\phi}{dt} = (1-\beta)\nu\Sigma_f\phi(t) + \sum_{i=1}^I \lambda_i C_i(t) - \Sigma_a\phi(t) - DB^2\phi(t) \]
+Thus we have a system of $I+1$ equations and $I+1$ unknowns.
